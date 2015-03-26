@@ -3,12 +3,10 @@
 namespace FlexBase;
 
 /**
- * Flex Action Component
- * 
- * @author Huy Ta <huytbt@gmail.com>
- * @since 1.0
+ * Flex Action Component.
  */
 class Action extends Component
 {
-    
+    public $before = null;
+    public $after = null;
 }
