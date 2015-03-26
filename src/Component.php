@@ -3,12 +3,8 @@
 namespace FlexBase;
 
 /**
- * Flex Component
- * 
- * @author Huy Ta <huytbt@gmail.com>
- * @since 1.0
+ * Flex Component.
  */
 class Component
 {
-    
 }
