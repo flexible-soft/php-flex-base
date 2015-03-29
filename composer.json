@@ -1,7 +1,7 @@
 {
     "name": "flexible-soft/php-flex-base",
     "description": "PHP Flex Base",
-    "type": "composer-plugin",
+    "type": "library",
     "license": "Apache-2.0",
     "require": {
         "php": ">=5.3.0"
