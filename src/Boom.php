@@ -26,51 +26,7 @@ class Boom extends Component
         if (!isset(self::$errors[$name])) {
             throw new Exception("Call to undefined method ".__CLASS__."::{$name}()", 500);
         }
-        $exception = '\\FlexBase\\Boom'.ucfirst($name).'Exception';
+        $exception = '\\FlexBase\\Boom\\'.ucfirst($name).'Exception';
         return new $exception(isset($arguments[0]) ? $arguments[0] : self::$errors[$name][1], self::$errors[$name][0]);
     }
-}
-
-class BoomException extends Exception
-{
-}
-
-class BoomBadRequestException extends BoomException
-{
-}
-
-class BoomUnauthorizedException extends BoomException
-{
-}
-
-class BoomForbiddenException extends BoomException
-{
-}
-
-class BoomNotFoundException extends BoomException
-{
-}
-
-class BoomMethodNotAllowedException extends BoomException
-{
-}
-
-class BoomNotAcceptableException extends BoomException
-{
-}
-
-class BoomProxyAuthRequiredException extends BoomException
-{
-}
-
-class BoomClientTimeoutException extends BoomException
-{
-}
-
-class BoomConflictException extends BoomException
-{
-}
-
-class BoomResourceGoneException extends BoomException
-{
 }
