@@ -27,6 +27,27 @@ class Boom extends Component
             throw new Exception("Call to undefined method ".__CLASS__."::{$name}()", 500);
         }
         $exception = '\\FlexBase\\Boom\\'.ucfirst($name).'Exception';
-        return new $exception(isset($arguments[0]) ? $arguments[0] : self::$errors[$name][1], self::$errors[$name][0]);
+
+        // #1. empty params
+        $message = self::$errors[$name][1];
+        $data = null;
+        $code = self::$errors[$name][0];
+        // #2. one param
+        if (count($arguments) === 1) {
+            // #2.1. array
+            if (is_array($arguments[0])) {
+                $data = $arguments[0];
+            } elseif (is_string($arguments[0])) {
+            // #2.2. string
+                $message = $arguments[0];
+            }
+        }
+        // #3. two params
+        elseif (count($arguments) > 0) {
+            $message = $arguments[0];
+            $data = $arguments[1];
+        }
+
+        return new $exception($message, $code, $data);
     }
 }
