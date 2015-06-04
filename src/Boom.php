@@ -19,6 +19,7 @@ class Boom extends Component
         'clientTimeout'  => array(408, 'Request Timeout'),
         'conflict'  => array(409, 'Conflict'),
         'resourceGone'  => array(410, 'Gone'),
+        'internal'  => array(500, 'Internal Server Error'),
     );
 
     public static function __callStatic($name, $arguments)
